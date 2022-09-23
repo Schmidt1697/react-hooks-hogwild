@@ -1,27 +1,20 @@
 import PigTile from "./PigTile";
-import React, {useState} from "react";
+import React from "react";
 
 function PigDisplay({hogs}){
-    const [isDisplayData,setIsDisplayData]=useState(false)
-    const handleTileClick=(e)=>{
-    //     setIsDisplayData (isDisplayData => !isDisplayData)
-    console.log("this was clicked")
-    } 
     
+   
 
-
-    const oneHog = hogs.map(hog => {
-        
+    const onePigCard = hogs.map(hog => {
         return (
-            
-            <PigTile key={hog.name} {...hog}isDisplayData={isDisplayData} handleTileClick={handleTileClick} className="ui eight wide column" />
+            <PigTile key={hog.name} hog={hog}  />
             
         )
     })
 
     return(
-        <div className= "ui grid container">
-            {oneHog}
+        <div className="ui grid container">
+            {onePigCard}
         </div>
     )
 }

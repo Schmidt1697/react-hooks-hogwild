@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
-function PigTile(hog, isDisplayData, handleTileClick){
+function PigTile({hog}){
     // console.log(hog)
-    const hiddenClass= isDisplayData ? "hidden" : ""
+    const [isDisplayData, setIsDisplayData]= useState(false);
+    function handleTileClick() {
+        setIsDisplayData((isDisplayData) => !isDisplayData);
+        console.log("this was clicked")
+    } 
     
-        
+    const hiddenClass= isDisplayData ? "" : "hidden";
+
     return (
         <div className="pigTile" onClick={handleTileClick}>
             <h3>{hog.name}</h3>
@@ -31,3 +36,4 @@ function PigTile(hog, isDisplayData, handleTileClick){
 }
  
 export default PigTile;
+
