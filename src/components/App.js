@@ -10,7 +10,7 @@ function App() {
 	return (
 		<div className="App">
 			<Nav />
-			<PigDisplay hogs={hogs}/>
+			<PigDisplay hogs={hogs} className="ui grid container"/>
 		</div>
 	);
 }
